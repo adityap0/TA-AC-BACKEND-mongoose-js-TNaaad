@@ -1,8 +1,13 @@
 let express = require("express");
 var mongoose = require("mongoose");
+var Schema = mongoose.Schema;
 var app = express();
 
 //connect to dataBase
+var userSchema = new Schema({
+  name: String,
+  age: Number,
+});
 mongoose.connect(
   "mongodb://127.0.0.1:27017/sample",
   { useNewUrlParser: true, useUnifiedTopology: true },
